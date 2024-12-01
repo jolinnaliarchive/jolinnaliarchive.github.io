@@ -20,7 +20,7 @@ const dosite = async _ => {
 const doTool = async _ => {
 	const fs = {}
 
-	for (const {path} of [...expandGlobSync(`docs/media/*/*`)]) {
+	for (const {path} of [...expandGlobSync(`docs/media1/*/*`)]) {
 		const match = path.match(/\/([^\/]+)\/([^\/]+)\.(\w+)$/)
 		if (!match) throw `unexpected filename when generating tool page: ${path}`
 		const [, short, name, ext] = match
@@ -33,7 +33,7 @@ const doTool = async _ => {
 	const site = fs_sorted.map(([short, files]) => {
 
 		return `<h2 id='${short}'>${short}</h2><div class=pics>${files.map(([name, full]) => {
-			const fullPath = `media/${short}/${full}`
+			const fullPath = `media1/${short}/${full}`
 			return `<div class=image fullPath='${fullPath}'><img src='../${fullPath}'><span class=image-text>${full}</text></div>`
 		}).join('')}</div>`
 	})

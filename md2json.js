@@ -8,9 +8,9 @@ Array.prototype.last = function() {
 
 const title2short = x => x.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-')
 
-const short2stills = short => [...expandGlobSync(`docs/media/${short}/*`)]
+const short2stills = short => [...expandGlobSync(`docs/media1/${short}/*`)]
 	.sort((x, y) => +x.name.match(/\d+/)[0] - +y.name.match(/\d+/)[0])
-	.map(f => `media/${short}/${f.name}`)
+	.map(f => `media1/${short}/${f.name}`)
 
 const short2writing = async short => {
 	const got = [...expandGlobSync(`writing/${short}.md`)]
